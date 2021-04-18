@@ -1,0 +1,161 @@
+/* Navigation bar */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.logo{
+    color: white;
+    height: 50px;
+    width: 200px;
+    position: relative;
+    border: 2px solid springgreen;
+}
+.nav{
+    display: block;
+    width: 100%;
+    background-color: black;
+    height: 50px;
+    position: fixed;
+    z-index: 1;
+}
+/* list styling */
+#navbar ul{
+    display:flex;
+    position: relative;
+    margin:  0px auto;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.3rem;
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+#home,.mainmenu:hover{
+    background: rgb(59, 195,253);
+    height: 4px;
+}
+/* Submenus */
+.submenu{
+    display: none;
+}
+#navbar ul li:hover .submenu{
+    display: block;
+    position: absolute;
+    background: rgb(59, 195,253);
+}
+#navbar ul li:hover .submenu ul{
+    display: block;
+}
+.submenu ul li a:hover{
+    background: rgb(104, 210, 255);
+}
+/* media queries */
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    #navbar ul li{
+        font-size: 1rem;
+    }
+    #navbar ul li a{
+        padding: 13px 15px;
+    }
+}
+@media only screen and (min-width: 770px) and (max-width: 1000px) {
+    #navbar ul li{
+        font-size: 0.8rem;
+    }
+    #navbar ul li a{
+        padding: 15px 15px;
+    }
+}
+@media only screen and (max-width: 790px){
+    /* old navigation */
+    #navbar ul{
+        flex-direction: column;
+    }
+    #navbar ul li{
+        font-size: 1rem;
+    }
+    #home,.mainmenu:hover{
+        background:none;
+        height: auto;
+    }
+    #navbar ul li:hover .submenu{
+        display: block;
+        position: relative;
+    }
+    .nav{
+        width: 100%;
+        height: auto;
+    }
+    .main li{
+        display: none;
+    }
+    .menutoggle{
+        display: block;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        border: 2px solid rgb(59, 195,253);
+        color: rgb(59, 195,253);
+    }
+    .menutoggle::before{
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+    }
+    .menutoggle.active::before{
+        content: '\f00d';
+    }
+    .main li.active{
+        display: block;
+    }
+    .logo.active{
+        display: none;
+    }
+
+}
+@media only screen and (min-width: 770px){
+/* animation */
+#navbar ul li:hover #about{
+    animation: about 0.2s ease-out;
+
+}
+@keyframes about{
+    0%{
+        top: 500px;
+    }
+    100%{
+        top: 50px;
+    }
+}
+#navbar ul li:hover #submission{
+    animation: submission 0.2s ease-out;
+
+}
+@keyframes submission{
+    0%{
+        top: 500px;
+    }
+    100%{
+        top: 50px;
+    }
+}
+#navbar ul li:hover #archive{
+    animation: archive 0.2s ease-out;
+
+}
+@keyframes archive{
+    0%{
+        top: 500px;
+    }
+    100%{
+        top: 50px;
+    }
+}
+/* animation end */
+}
